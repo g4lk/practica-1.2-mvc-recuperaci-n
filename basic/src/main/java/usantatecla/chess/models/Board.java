@@ -2,7 +2,6 @@ package usantatecla.chess.models;
 
 
 import usantatecla.utils.Coordinate;
-import usantatecla.utils.Observed;
 
 import java.util.ArrayList;
 
