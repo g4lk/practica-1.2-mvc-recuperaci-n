@@ -17,6 +17,10 @@ public abstract class Piece {
         return color;
     }
 
+    public char getLetter() {
+        return letter;
+    }
+
     public void write() {
         if (this.color == Color.Black) {
             Message.COLOR_BLACK.write();

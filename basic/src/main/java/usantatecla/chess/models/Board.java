@@ -120,7 +120,7 @@ public class Board {
         return true;
     }
 
-    private boolean isCheck(Color color) {
+    public boolean isCheck(Color color) {
         assert color != null;
 
         for (int i = 0; i < Coordinate.DIMENSION; i++) {
@@ -190,7 +190,7 @@ public class Board {
         return !this.getSquare(coordinate).isColor(color);
     }
 
-    private Square getSquare(Coordinate coordinate) {
+    public Square getSquare(Coordinate coordinate) {
         assert coordinate != null;
 
         return this.squares[coordinate.getRow()][coordinate.getColumn()];

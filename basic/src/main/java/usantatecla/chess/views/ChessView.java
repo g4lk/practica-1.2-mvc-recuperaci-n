@@ -7,7 +7,12 @@ import usantatecla.utils.Observer;
 
 public class ChessView extends Observed implements Observer { 
 
+    private Chess chess;
+    
+
     public ChessView(Chess chess, Observer observer) {
+        this.chess = chess;
+
     }
 
     @Override
@@ -17,6 +22,8 @@ public class ChessView extends Observed implements Observer {
     }
 
     public void write() {
+        MessageView.TITLE.writeln();
+        new BoardView(this.chess.getBoard()).writeln();
     }
     
 }

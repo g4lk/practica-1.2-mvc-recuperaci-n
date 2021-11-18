@@ -50,5 +50,9 @@ public class Chess extends Observed {
     public static void main(String[] args) {
         new Chess().play();
     }
+
+    public Board getBoard() {
+        return this.board;
+    }
   
 }
