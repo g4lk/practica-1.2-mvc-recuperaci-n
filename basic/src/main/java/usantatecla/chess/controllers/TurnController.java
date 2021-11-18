@@ -2,6 +2,7 @@ package usantatecla.chess.controllers;
 
 import usantatecla.chess.models.Board;
 import usantatecla.chess.models.Turn;
+import usantatecla.chess.views.BoardView;
 import usantatecla.chess.views.TurnView;
 
 public class TurnController {
@@ -21,6 +22,11 @@ public class TurnController {
 
     public TurnView getTurnView(){
         return this.turnView;
+    }
+
+    public void play() {
+        this.turn.play();
+        new BoardView(this.turn.getBoard()).writeln();
     }
 
 }

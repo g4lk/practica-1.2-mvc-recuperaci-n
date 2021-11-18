@@ -4,6 +4,8 @@ import usantatecla.chess.views.ChessView;
 import usantatecla.utils.Event;
 import usantatecla.utils.Observed;
 import usantatecla.utils.Observer;
+import usantatecla.chess.events.MoveEvent;
+import usantatecla.chess.events.NewGameEvent;
 import usantatecla.chess.models.Chess;
 
 public class ChessController implements Observer {
@@ -33,9 +35,13 @@ public class ChessController implements Observer {
 		this.chessView.write();
 	}
 
-    @Override
     public void update(Observed observed, Event event) {
-		
+		if (event instanceof MoveEvent) {
+			this.turnController.play();
+		} else if (event instanceof NewGameEvent) {
+			this.clear();
+			this.play();
+		}
 	}
 
     public static void main(String[] args) {
