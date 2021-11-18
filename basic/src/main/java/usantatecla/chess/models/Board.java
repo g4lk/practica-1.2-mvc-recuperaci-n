@@ -1,12 +1,12 @@
 package usantatecla.chess.models;
 
-import usantatecla.chess.events.UpdateBoardEvent;
+
 import usantatecla.utils.Coordinate;
 import usantatecla.utils.Observed;
 
 import java.util.ArrayList;
 
-public class Board extends Observed {
+public class Board {
     private final Square[][] squares = new Square[Coordinate.DIMENSION][Coordinate.DIMENSION];
     private Square[] kingsSquares;
     private Path checkPath;
@@ -77,8 +77,6 @@ public class Board extends Observed {
         if (isCheck(targetSquare.getPiece().getColor().getOpposite())) {
             checkPath = new Path(getSquares(target.getCoordinatesTo(kingsSquares[targetSquare.getPiece().getColor().getOpposite().ordinal()].getCoordinate())));
         }
-
-        this.notify(new UpdateBoardEvent());
     }
 
     private void updateKings(Square originSquare, Square targetSquare) {
