@@ -3,9 +3,6 @@ package usantatecla.chess.views;
 import usantatecla.chess.models.Board;
 import usantatecla.chess.models.Color;
 import usantatecla.utils.Coordinate;
-import usantatecla.utils.Event;
-import usantatecla.utils.Observed;
-import usantatecla.utils.Observer;
 
 public class BoardView extends ConsoleView {
 
