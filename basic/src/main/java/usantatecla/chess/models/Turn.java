@@ -34,7 +34,7 @@ public class Turn {
         this.activePlayer = 1;
     }
 
-    Color getActiveColor() {
+    public Color getActiveColor() {
         return this.players[this.activePlayer].getColor();
     }
 }
