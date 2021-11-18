@@ -1,4 +1,4 @@
-package usantatecla.chess;
+package usantatecla.chess.models;
 
 import java.util.ArrayList;
 

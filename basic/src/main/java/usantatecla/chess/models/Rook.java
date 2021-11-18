@@ -1,4 +1,4 @@
-package usantatecla.chess;
+package usantatecla.chess.models;
 
 public class Rook extends Piece {
 

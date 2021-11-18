@@ -1,4 +1,4 @@
-package usantatecla.chess;
+package usantatecla.chess.models;
 
 public class King extends Piece{
     public King(Color color) {
