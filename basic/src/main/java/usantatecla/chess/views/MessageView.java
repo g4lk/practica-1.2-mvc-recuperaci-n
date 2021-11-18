@@ -15,7 +15,8 @@ enum MessageView {
     RESUME("Do you want to continue"),
     SPACE(" "),
     COLOR_BLACK("\u001B[30m"),
-    COLOR_RESET("\u001B[0m");
+    COLOR_RESET("\u001B[0m"),
+    MOVE_COMMAND("Moving!");
 
     private final String message;
 

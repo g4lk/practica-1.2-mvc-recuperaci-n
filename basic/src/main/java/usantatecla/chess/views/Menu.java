@@ -10,6 +10,7 @@ class Menu extends usantatecla.utils.Menu {
 
 	Menu(Chess chess, Observer observer) {
 		this.commands = new ArrayList<Command>();
+		this.commands.add(new MoveCommand(chess,observer));
 	}
 
 }

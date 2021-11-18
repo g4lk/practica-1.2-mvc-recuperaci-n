@@ -1,7 +1,7 @@
 package usantatecla.chess.views;
 
+import usantatecla.chess.events.EndGameEvent;
 import usantatecla.chess.events.NewGameEvent;
-import usantatecla.chess.events.WonGameEvent;
 import usantatecla.chess.models.Chess;
 import usantatecla.chess.models.Color;
 import usantatecla.utils.Event;
@@ -16,12 +16,12 @@ public class ChessView extends Observed implements Observer {
 
     public ChessView(Chess chess, Observer observer) {
         this.chess = chess;
-
+        this.menu = new Menu(chess, observer);
     }
 
     @Override
     public void update(Observed observed, Event event) {
-        if (event instanceof WonGameEvent) {
+        if (event instanceof EndGameEvent) {
             if (this.chess.getBoard().isCheckMate(Color.Black))
 			    MessageView.BLACK_CHECKMATE.writeln();
             else
@@ -38,7 +38,7 @@ public class ChessView extends Observed implements Observer {
         new BoardView(this.chess.getBoard()).writeln();
         do {
 			this.menu.execute();
-		} while (!this.chess.getBoard().isCheckMate(Color.Black) && !this.chess.getBoard().isCheckMate(Color.White));
+		} while (this.chess.getBoard().isCheckMate(this.chess.getTurn().getActiveColor());
     }
 
     private void resume() {

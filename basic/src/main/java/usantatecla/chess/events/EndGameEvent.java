@@ -2,6 +2,6 @@ package usantatecla.chess.events;
 
 import usantatecla.utils.Event;
 
-public class LostGameEvent extends Event {
-
+public class EndGameEvent extends Event {
+    
 }

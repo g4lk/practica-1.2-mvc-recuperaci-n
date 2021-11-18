@@ -1,5 +1,6 @@
 package usantatecla.chess.models;
 
+import usantatecla.chess.events.EndGameEvent;
 import usantatecla.utils.Observed;
 import usantatecla.utils.YesNoDialog;
 
@@ -34,7 +35,11 @@ public class Chess extends Observed {
     }
 
     private boolean isCheckMate() {
-        return this.board.isCheckMate(this.turn.getActiveColor());
+        boolean isCheckMate = this.board.isCheckMate(this.turn.getActiveColor());
+        if (isCheckMate) {
+            this.notify(new EndGameEvent());
+        }
+        return isCheckMate;
     }
 
     private boolean isResumedGame() {
@@ -53,6 +58,10 @@ public class Chess extends Observed {
 
     public Board getBoard() {
         return this.board;
+    }
+
+    public Turn getTurn() {
+        return this.turn;
     }
   
 }
