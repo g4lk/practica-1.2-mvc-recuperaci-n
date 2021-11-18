@@ -27,10 +27,7 @@ public class ChessView extends Observed implements Observer {
             else
                 MessageView.WHITE_CHECKMATE.writeln();
             this.resume();
-        }
-        
-
-        
+        }       
     }
 
     public void write() {
@@ -38,7 +35,7 @@ public class ChessView extends Observed implements Observer {
         new BoardView(this.chess.getBoard()).writeln();
         do {
 			this.menu.execute();
-		} while (this.chess.getBoard().isCheckMate(this.chess.getTurn().getActiveColor());
+		} while (!this.chess.getBoard().isCheckMate(this.chess.getTurn().getActiveColor()));
     }
 
     private void resume() {
