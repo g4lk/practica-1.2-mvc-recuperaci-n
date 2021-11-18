@@ -1,6 +1,5 @@
 package usantatecla.chess.models;
 
-import usantatecla.utils.Console;
 
 import java.util.List;
 

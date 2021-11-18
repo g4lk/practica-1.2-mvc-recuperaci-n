@@ -1,7 +1,6 @@
 package usantatecla.chess.models;
 
 import usantatecla.chess.events.UpdateBoardEvent;
-import usantatecla.utils.Console;
 import usantatecla.utils.Coordinate;
 import usantatecla.utils.Observed;
 
