@@ -1,8 +1,9 @@
 package usantatecla.chess.models;
 
+import usantatecla.utils.Observed;
 import usantatecla.utils.YesNoDialog;
 
-public class Chess {
+public class Chess extends Observed {
     private final Board board;
     private final Turn turn;
 
@@ -10,6 +11,11 @@ public class Chess {
         this.board = new Board();
         this.turn = new Turn(this.board);
     }
+
+    public Chess(Board board, Turn turn){
+        this.board = board;
+        this.turn = turn;
+    } 
 
     private void play() {
         do {
@@ -44,4 +50,5 @@ public class Chess {
     public static void main(String[] args) {
         new Chess().play();
     }
+  
 }
