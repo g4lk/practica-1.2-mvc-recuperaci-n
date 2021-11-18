@@ -19,4 +19,8 @@ public class TurnController {
         return this.turn;
     }
 
+    public TurnView getTurnView(){
+        return this.turnView;
+    }
+
 }
