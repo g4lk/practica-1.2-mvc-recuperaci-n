@@ -2,10 +2,11 @@ package usantatecla.chess.models;
 
 import usantatecla.utils.Console;
 import usantatecla.utils.Coordinate;
+import usantatecla.utils.Observed;
 
 import java.util.ArrayList;
 
-public class Board {
+public class Board extends Observed {
     private final Square[][] squares = new Square[Coordinate.DIMENSION][Coordinate.DIMENSION];
     private Square[] kingsSquares;
     private Path checkPath;

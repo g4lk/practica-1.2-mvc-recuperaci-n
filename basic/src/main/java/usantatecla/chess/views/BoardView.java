@@ -1,10 +1,14 @@
 package usantatecla.chess.views;
 
+import usantatecla.chess.events.UpdateBoardEvent;
 import usantatecla.chess.models.Board;
 import usantatecla.chess.models.Color;
 import usantatecla.utils.Coordinate;
+import usantatecla.utils.Event;
+import usantatecla.utils.Observed;
+import usantatecla.utils.Observer;
 
-public class BoardView extends ConsoleView {
+public class BoardView extends ConsoleView implements Observer {
 
     private Board board;
 
@@ -29,6 +33,14 @@ public class BoardView extends ConsoleView {
         } else if (this.board.isCheck(Color.White)) {
             MessageView.WHITE_CHECK.writeln();
         }
+    }
+
+    @Override
+    public void update(Observed observed, Event event) {
+        if (event instanceof UpdateBoardEvent) {
+			this.writeln();
+		} 
+        
     }
 
 }

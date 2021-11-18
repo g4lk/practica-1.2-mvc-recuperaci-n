@@ -15,6 +15,7 @@ public class BoardController {
 	BoardController(Board board) {
 		this.board = board;
 		this.boardView = new BoardView(this.board);
+		this.board.addObserver(this.boardView);
 	}
 
 	public Board getBoard() {

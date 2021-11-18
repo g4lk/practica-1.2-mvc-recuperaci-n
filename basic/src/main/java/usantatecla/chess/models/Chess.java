@@ -34,7 +34,7 @@ public class Chess extends Observed {
         this.turn.writeWinner();
     }
 
-    private boolean isCheckMate() {
+    public boolean isCheckMate() {
         boolean isCheckMate = this.board.isCheckMate(this.turn.getActiveColor());
         if (isCheckMate) {
             this.notify(new EndGameEvent());
