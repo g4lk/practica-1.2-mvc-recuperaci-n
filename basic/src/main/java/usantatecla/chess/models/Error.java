@@ -2,7 +2,7 @@ package usantatecla.chess.models;
 
 import usantatecla.utils.Console;
 
-enum Error {
+public enum Error {
 
 	NOT_EMPTY("The square is empty"),
 	IS_ILLEGAL("This move is illegal"),

@@ -1,5 +1,6 @@
 package usantatecla.chess.models;
 
+import usantatecla.chess.events.UpdateBoardEvent;
 import usantatecla.utils.Console;
 import usantatecla.utils.Coordinate;
 import usantatecla.utils.Observed;
@@ -77,6 +78,8 @@ public class Board extends Observed {
         if (isCheck(targetSquare.getPiece().getColor().getOpposite())) {
             checkPath = new Path(getSquares(target.getCoordinatesTo(kingsSquares[targetSquare.getPiece().getColor().getOpposite().ordinal()].getCoordinate())));
         }
+
+        this.notify(new UpdateBoardEvent());
     }
 
     private void updateKings(Square originSquare, Square targetSquare) {
@@ -205,24 +208,6 @@ public class Board extends Observed {
             squares.add(getSquare(coordinate));
         }
         return squares;
-    }
-
-    public void print() {
-        Message.HORIZONTAL_LINE.writeln();
-        for (int i = 0; i < Coordinate.DIMENSION; i++) {
-            Message.VERTICAL_LINE.write();
-            for (int j = 0; j < Coordinate.DIMENSION; j++) {
-                this.squares[i][j].write();
-                Message.VERTICAL_LINE.write();
-            }
-            Console.getInstance().writeln();
-        }
-        Message.HORIZONTAL_LINE.writeln();
-        if (this.isCheck(Color.Black)) {
-            Message.BLACK_CHECK.writeln();
-        } else if (this.isCheck(Color.White)) {
-            Message.WHITE_CHECK.writeln();
-        }
     }
 
 }

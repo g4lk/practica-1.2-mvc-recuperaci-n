@@ -21,14 +21,6 @@ public abstract class Piece {
         return letter;
     }
 
-    public void write() {
-        if (this.color == Color.Black) {
-            Message.COLOR_BLACK.write();
-        }
-        Console.getInstance().write(letter);
-        Message.COLOR_RESET.write();
-    }
-
     public boolean isMoveLegal(Path path) {
         return !this.isEatingFriend(path) && this._isMoveLegal(path);
     }

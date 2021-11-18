@@ -19,15 +19,6 @@ public class Square {
         return this.piece.isMoveLegal(squaresInBetween);
     }
 
-    public void write() {
-        if (this.piece != null) {
-            this.piece.write();
-        }
-        else {
-            Message.SPACE.write();
-        }
-    }
-
     public Coordinate getCoordinate() {
         return coordinate;
     }

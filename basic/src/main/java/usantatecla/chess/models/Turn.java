@@ -11,19 +11,9 @@ public class Turn {
         this.reset();
     }
 
-    public void play(){
-        this.players[this.activePlayer].play();
+    public void changeActivePlayer(){
         if (!this.board.isCheckMate(this.getActiveColor())){
             this.activePlayer = (this.activePlayer+1) % 2;
-        }
-    }
-
-    public void writeWinner() {
-        if (this.getActiveColor() == Color.Black) {
-            Message.BLACK_CHECKMATE.writeln();
-        }
-        else {
-            Message.WHITE_CHECKMATE.writeln();
         }
     }
 
@@ -40,5 +30,9 @@ public class Turn {
 
     public Board getBoard() {
         return this.board;
+    }
+
+    public Player getActivePlayer() {
+        return this.players[this.activePlayer];
     }
 }
